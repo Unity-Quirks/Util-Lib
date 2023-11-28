@@ -1,0 +1,22 @@
+{
+    "name": "com.quartzified.util-lib",
+    "version": "0.1.0",
+    "displayName": "Util-Lib",
+    "description": "Collection of useful utility and methods for Unity.",
+    "unity": "2022.3",
+    "unityRelease": "11f1",
+    "documentationUrl": "",
+    "changelogUrl": "",
+    "licensesUrl": "",
+    "keywords": [
+      "Quartzified",
+      "Utility",
+      "Library"
+    ],
+    "author": {
+      "name": "Quartzi",
+      "email": "",
+      "url": "https://github.com/Unity-Quirks/Util-Lib"
+    },
+    "type": "tool"
+  }
