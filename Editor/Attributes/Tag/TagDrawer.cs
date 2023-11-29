@@ -1,6 +1,9 @@
+#if UNITY_EDITOR
+
 using System;
 using UnityEditor;
 using UnityEngine;
+using Quirks.Attributes;
 
 namespace Quirks.Editor.Attributes
 {
@@ -56,3 +59,5 @@ namespace Quirks.Editor.Attributes
 
     }
 }
+
+#endif

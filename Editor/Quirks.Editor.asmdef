@@ -1,7 +1,9 @@
 {
     "name": "Quirks.Editor",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:2f808658823360149a6311124ec79790"
+    ],
     "includePlatforms": [
         "Editor"
     ],

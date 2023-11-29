@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Quirks.Editor.Attributes
+namespace Quirks.Attributes
 {
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
     public class TagAttribute : PropertyAttribute
