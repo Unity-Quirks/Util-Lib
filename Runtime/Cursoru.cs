@@ -1,25 +1,28 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public static class Cursoru
+namespace Quirks
 {
-    public static void DeselectCarefully()
+    public static class Cursoru
     {
-        if (!Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
+        public static void DeselectCarefully()
         {
-            EventSystem.current.SetSelectedGameObject(null);
+            if (!Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+            }
         }
-    }
 
-    public static bool IsOverUI()
-    {
-        if (EventSystem.current.IsPointerOverGameObject())
-            return true;
-
-        for (int i = 0; i < Input.touchCount; ++i)
-            if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(i).fingerId))
+        public static bool IsOverUI()
+        {
+            if (EventSystem.current.IsPointerOverGameObject())
                 return true;
 
-        return GUIUtility.hotControl != 0;
+            for (int i = 0; i < Input.touchCount; ++i)
+                if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(i).fingerId))
+                    return true;
+
+            return GUIUtility.hotControl != 0;
+        }
     }
 }
