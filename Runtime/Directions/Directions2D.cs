@@ -5,9 +5,6 @@ namespace Quirks.Directions
 {
     public class Directions2D
     {
-        /// <summary>2D Direction Property</summary>
-        public enum Direction2D { Up, Down, Left, Right };
-
         /// <summary>Returns the movement Direction in 2D Space</summary>
         public static Direction2D GetDirection2D(float xOne, float yOne, float xTwo, float yTwo)
         {

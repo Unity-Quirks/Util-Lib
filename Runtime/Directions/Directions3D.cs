@@ -5,9 +5,6 @@ namespace Quirks.Directions
 {
     public class Directions3D
     {
-        /// <summary>3D Direction Property</summary>
-        public enum Direction3D { Forward, Back, Up, Down, Left, Right };
-
         /// <summary>Return the movement Direction in 3D Space</summary>
         public static Direction3D GetDirection3D(float xOne, float yOne, float zOne, float xTwo, float yTwo, float zTwo)
         {
