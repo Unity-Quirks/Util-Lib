@@ -1,10 +1,10 @@
 {
     "name": "com.quartzified.util-lib",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "displayName": "Util-Lib",
     "description": "Collection of useful utility and methods for Unity.",
     "unity": "2022.3",
-    "unityRelease": "11f1",
+    "unityRelease": "52f1",
     "documentationUrl": "",
     "changelogUrl": "",
     "licensesUrl": "",
