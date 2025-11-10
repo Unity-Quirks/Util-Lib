@@ -1,9 +1,125 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace Quirks
 {
     public static class Interpq
     {
+        #region Easing Functions
+
+        #region Quad
+
+        public static float InQuad(float t) => t * t;
+        public static float OutQuad(float t) => 1 - InQuad(1 - t);
+        public static float InOutQuad(float t)
+        {
+            if (t < 0.5f) return InQuad(t * 2) * 0.5f;
+            return 1 - InQuad((1 - t) * 2) * 0.5f;
+        }
+
+        #endregion
+
+        #region Cubic
+
+        public static float InCubic(float t) => t * t * t;
+        public static float OutCubic(float t) => 1 - InCubic(1 - t);
+        public static float InOutCubic(float t)
+        {
+            if (t < 0.5f) return InCubic(t * 2) * 0.5f;
+            return 1 - InCubic((1 - t) * 2) * 0.5f;
+        }
+
+        #endregion
+
+        #region Quart
+
+        public static float InQuart(float t) => t * t * t * t;
+        public static float OutQuart(float t) => 1 - InQuart(1 - t);
+        public static float InOutQuart(float t)
+        {
+            if (t < 0.5f) return InQuart(t * 2) * 0.5f;
+            return 1 - InQuart((1 - t) * 2) * 0.5f;
+        }
+
+        #endregion
+
+        #region Quint
+
+        public static float InQuint(float t) => t * t * t * t * t;
+        public static float OutQuint(float t) => 1 - InQuint(1 - t);
+        public static float InOutQuint(float t)
+        {
+            if (t < 0.5f) return InQuint(t * 2) * 0.5f;
+            return 1 - InQuint((1 - t) * 2) * 0.5f;
+        }
+
+        #endregion
+
+        #region Sine
+
+        public static float InSine(float t) => 1 - (float)Trigq.Cos(t * Mathq.Pi * 0.5f);
+        public static float OutSine(float t) => (float)Trigq.Sin(t * Mathq.Pi * 0.5f);
+        public static float InOutSine(float t) => (float)(Trigq.Cos(t * Mathq.Pi) - 1) * -0.5f;
+
+        #endregion
+
+        #region Expo
+
+        public static float InExpo(float t) => (float)Mathq.Pow(2, 10 * (t - 1));
+        public static float OutExpo(float t) => 1 - InExpo(1 - t);
+        public static float InOutExpo(float t)
+        {
+            if (t < 0.5f) return InExpo(t * 2) * 0.5f;
+            return 1 - InExpo((1 - t) * 2) * 0.5f;
+        }
+
+        #endregion
+
+        #region Circ
+
+        public static float InCirc(float t) => -((float)Mathq.Sqrt(1 - t * t) - 1);
+        public static float OutCirc(float t) => 1 - InCirc(1 - t);
+        public static float InOutCirc(float t)
+        {
+            if (t < 0.5f) return InCirc(t * 2) * 0.5f;
+            return 1 - InCirc((1 - t) * 2) * 0.5f;
+        }
+
+        #endregion
+
+        #region Elastic
+
+        public static float InElastic(float t) => 1 - OutElastic(1 - t);
+        public static float OutElastic(float t)
+        {
+            float p = 0.3f;
+            return (float)Mathq.Pow(2, -10 * t) * (float)Trigq.Sin((t - p / 4) * (2 * Mathq.Pi) / p) + 1;
+        }
+        public static float InOutElastic(float t)
+        {
+            if (t < 0.5f) return InElastic(t * 2) * 0.5f;
+            return 1 - InElastic((1 - t) * 2) * 0.5f;
+        }
+
+        #endregion
+
+        #region Back
+
+        public static float InBack(float t)
+        {
+            float s = 1.70158f;
+            return t * t * ((s + 1) * t - s);
+        }
+        public static float OutBack(float t) => 1 - InBack(1 - t);
+        public static float InOutBack(float t)
+        {
+            if (t < 0.5f) return InBack(t * 2) * 0.5f;
+            return 1 - InBack((1 - t) * 2) * 0.5f;
+        }
+
+        #endregion
+
+        #endregion
+
         #region Lerp
 
         public static int Lerp(int a, int b, float t) => Mathq.AsInt(a + (b - a) * Mathq.Clamp01(t));
