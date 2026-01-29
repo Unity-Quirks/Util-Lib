@@ -12,7 +12,6 @@ namespace Quirks.Balancing
         [SerializeField] private double exponent;
         public double Exponent => exponent;
 
-        [SerializeField]
         private double sinStep
         {
             get
