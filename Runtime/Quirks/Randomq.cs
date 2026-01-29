@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace Quirks
 {
-    public static class Randomq
+    public static partial class Randomq
     {
         static readonly ThreadLocal<Random> threadLocalRandom = new ThreadLocal<Random>(() => new Random(GetSeed()));
 
