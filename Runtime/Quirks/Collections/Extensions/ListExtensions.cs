@@ -72,7 +72,7 @@ namespace Quirks.Collections
         {
             for (int i = 0; i < source.Count; i++)
             {
-                int j = Randomq.GetRandom(0, i);
+                int j = Randomq.Range(0, i);
                 if (j != i)
                 {
                     target[i] = target[j];
@@ -98,21 +98,15 @@ namespace Quirks.Collections
         #region Random
 
         /// <summary>Returns one random entry from the List.</summary>
-        public static T GetRandom<T>(this IList<T> list)
-        {
-            return list[Randomq.GetRandom(0, list.Count - 1)];
-        }
+        public static T GetRandom<T>(this IList<T> list) => Randomq.Choice(list);
 
         /// <summary>Returns one random entry from the Collection.</summary>
-        public static T GetRandom<T>(this ICollection<T> list)
-        {
-            return list.ElementAt(Randomq.GetRandom(0, list.Count - 1));
-        }
+        public static T GetRandom<T>(this ICollection<T> list) => Randomq.Choice(list);
 
         /// <summary>Returns a random entry and swaps their position.</summary>
         public static T PickRandomAndSwap<T>(this IList<T> list, ref int size)
         {
-            int index = Randomq.GetRandom(0, size - 1);
+            int index = Randomq.Range(0, size - 1);
 
             T temp = list[index];
 
@@ -125,10 +119,7 @@ namespace Quirks.Collections
         }
 
         /// <summary>Shuffles the list randomly.</summary>
-        public static void Shuffle<T>(this IList<T> list)
-        {
-            for (int size = list.Count; size > 1; PickRandomAndSwap(list, ref size)) ;
-        }
+        public static void Shuffle<T>(this IList<T> list) => Randomq.Shuffle(list);
 
         #endregion
     }

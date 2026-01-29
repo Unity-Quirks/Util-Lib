@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -43,7 +43,7 @@ namespace Quirks.Collections.Generic
         {
             get
             {
-                if(records.Count == 0) 
+                if (records.Count == 0)
                     return default;
 
                 return records.Min(r => r.value);
@@ -58,7 +58,7 @@ namespace Quirks.Collections.Generic
             DateTime cutOff = DateTime.UtcNow - timeSpan;
             List<(DateTime timeStamp, T value)> filteredRecords = records.Where(r => r.timeStamp >= cutOff).ToList();
 
-            if(filteredRecords.Count == 0)
+            if (filteredRecords.Count == 0)
                 return default;
 
             return filteredRecords.Min(r => r.value);
@@ -93,7 +93,7 @@ namespace Quirks.Collections.Generic
         /// <summary>Returns the sum of all values.</summary>
         public T Sum
         {
-            get 
+            get
             {
                 if (records.Count == 0)
                     return default;
@@ -151,13 +151,13 @@ namespace Quirks.Collections.Generic
         void CheckRecords()
         {
             // Remove oldest records if exceeding max records
-            while(records.Count > maxRecords)
+            while (records.Count > maxRecords)
             {
                 records.Dequeue();
             }
 
             // Remove records older than the retention time
-            while(records.Count > 0 && records.Peek().timeStamp < DateTime.UtcNow - retentionTime)
+            while (records.Count > 0 && records.Peek().timeStamp < DateTime.UtcNow - retentionTime)
             {
                 records.Dequeue();
             }

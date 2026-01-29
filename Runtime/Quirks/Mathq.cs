@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace Quirks
 {
@@ -9,8 +8,14 @@ namespace Quirks
         /// <summary>This is a double precision constant of Pi. Approximately 3.14.</summary>
         public const double doublePi = 3.14159265358979323846;
 
+        /// <summary>This is a double precision constant of 2Pi. Approximately 6.28.</summary>
+        public const double doubleTau = 6.28318530717958647692;
+
         /// <summary>This is a double precision constant of e also known as Euler's number. Approximately 2.72.</summary>
         public const double doubleE = 2.71828182845904523536;
+
+        /// <summary>This is a double precision constant of the Golden Ratio. Approximately 1.62.</summary>
+        public const double doubleGoldenRatio = 1.6180339887498948482;
 
         /// <summary>This is a double precision of the base 2 logarithm of e. Approximately 1.44.</summary>
         public const double doubleLog2E = 1.44269504088896340736;
@@ -49,8 +54,14 @@ namespace Quirks
         /// <summary>The mathematical constant of Pi. Approximately 3.14.</summary>
         public const float Pi = (float)doublePi;
 
+        /// <summary>The mathematical constant of 2Pi. Approximately 6.28.</summary>
+        public const float Tau = (float)doubleTau;
+
         /// <summary>The mathematical constant of e also known as Euler's number. Approximately 2.72.</summary>
         public const float E = (float)doubleE;
+
+        /// <summary>The mathematical constant of the Golden Ratio. Approximately 1.62.</summary>
+        public const float GoldenRatio = (float)doubleGoldenRatio;
 
         /// <summary>The base 2 logarithm of e. Approximately 1.44.</summary>
         public const float Log2E = (float)doubleLog2E;
@@ -90,14 +101,23 @@ namespace Quirks
 
         #region AsInt
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns an uint as an int.</summary>
         public static int AsInt(uint x) => (int)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns a long as an int.</summary>
         public static int AsInt(long x) => (int)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns an ulong as an int.</summary>
         public static int AsInt(ulong x) => (int)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns a float as an int.</summary>
         public static int AsInt(float x) => (int)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns a double as an int.</summary>
         public static int AsInt(double x) => (int)x;
 
@@ -105,14 +125,23 @@ namespace Quirks
 
         #region AsUInt
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns an int as an uint.</summary>
         public static uint AsUInt(int x) => (uint)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns a long as an uint.</summary>
         public static uint AsUInt(long x) => (uint)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns an ulong as an uint.</summary>
         public static uint AsUInt(ulong x) => (uint)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns a float as an uint.</summary>
         public static uint AsUInt(float x) => (uint)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns a double as an uint.</summary>
         public static uint AsUInt(double x) => (uint)x;
 
@@ -120,14 +149,23 @@ namespace Quirks
 
         #region AsLong
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns an int as a long.</summary>
         public static long AsLong(int x) => (long)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns an uint as a long.</summary>
         public static long AsLong(uint x) => (long)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns an ulong as a long.</summary>
         public static long AsLong(ulong x) => (long)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns a float as a long.</summary>
         public static long AsLong(float x) => (long)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns a double as a long.</summary>
         public static long AsLong(double x) => (long)x;
 
@@ -135,14 +173,23 @@ namespace Quirks
 
         #region AsULong
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns an int as an ulong.</summary>
         public static ulong AsULong(int x) => (ulong)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns an uint as an ulong.</summary>
         public static ulong AsULong(uint x) => (ulong)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns a long as an ulong.</summary>
         public static ulong AsULong(long x) => (ulong)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns a float as an ulong.</summary>
         public static ulong AsULong(float x) => (ulong)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns a double as an ulong.</summary>
         public static ulong AsULong(double x) => (ulong)x;
 
@@ -150,14 +197,23 @@ namespace Quirks
 
         #region AsFloat
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns an int as a float.</summary>
         public static float AsFloat(int x) => (float)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns an uint as a float.</summary>
         public static float AsFloat(uint x) => (float)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns a long as a float.</summary>
         public static float AsFloat(long x) => (float)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns an ulong as a float.</summary>
         public static float AsFloat(ulong x) => (float)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns a double as a float.</summary>
         public static float AsFloat(double x) => (float)x;
 
@@ -165,14 +221,23 @@ namespace Quirks
 
         #region AsDouble
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns an int as a double.</summary>
         public static double AsDouble(int x) => (double)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns an uint as a double.</summary>
         public static double AsDouble(uint x) => (double)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns a long as a double.</summary>
         public static double AsDouble(long x) => (double)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns an ulong as a double.</summary>
         public static double AsDouble(ulong x) => (double)x;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns a float as a double.</summary>
         public static double AsDouble(float x) => (double)x;
 
@@ -180,15 +245,21 @@ namespace Quirks
 
         #region Pow
 
-        public static float Pow(float x, float y) => AsFloat(Math.Pow(x, y));
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Pow(float x, float y) => MathF.Pow(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Pow(double x, double y) => Math.Pow(x, y);
 
         #endregion
 
         #region Sqrt
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the square root of x.</summary>
-        public static float Sqrt(float x) => (float)Math.Sqrt(x);
+        public static float Sqrt(float x) => MathF.Sqrt(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the square root of x.</summary>
         public static double Sqrt(double x) => Math.Sqrt(x);
 
@@ -196,23 +267,37 @@ namespace Quirks
 
         #region Cbrt
 
-        public static float Cbrt(float x) => (float)Math.Cbrt(x);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Cbrt(float x) => MathF.Cbrt(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Cbrt(double x) => Math.Cbrt(x);
 
         #endregion
 
         #region Abs
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the absolute value of x.</summary>
         public static double Abs(double x) => Math.Abs(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the absolute value of x.</summary>
-        public static float Abs(float x) => (float)Math.Abs(x);
+        public static float Abs(float x) => MathF.Abs(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the absolute value of x.</summary>
         public static int Abs(int x) => Math.Abs(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the absolute value of x.</summary>
         public static long Abs(long x) => Math.Abs(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the absolute value of x.</summary>
         public static short Abs(short x) => Math.Abs(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the absolute value of x.</summary>
         public static sbyte Abs(sbyte x) => Math.Abs(x);
 
@@ -220,8 +305,39 @@ namespace Quirks
 
         #region Exp
 
-        public static float Exp(float x) => (float)Math.Exp(x);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Exp(float x) => MathF.Exp(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Exp(double x) => Math.Exp(x);
+
+        #endregion
+
+        #region Sign
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int Sign(sbyte x) => Math.Sign(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int Sign(short x) => Math.Sign(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int Sign(int x) => Math.Sign(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int Sign(uint x) => Math.Sign(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int Sign(long x) => Math.Sign(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int Sign(decimal x) => Math.Sign(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int Sign(float x) => MathF.Sign(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int Sign(double x) => Math.Sign(x);
 
         #endregion
 
@@ -423,16 +539,27 @@ namespace Quirks
 
         #region Min
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the minimum of two int values.</summary>
         public static int Min (int x, int y) => x < y ? x : y;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the minimum of two uint values.</summary>
         public static uint Min(uint x, uint y) => x < y ? x : y;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the minimum of two long values.</summary>
         public static long Min(long x, long y) => x < y ? x : y;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the minimum of two ulongvalues.</summary>
         public static ulong Min(ulong x, ulong y) => x < y ? x : y;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the minimum of two float values.</summary>
         public static float Min(float x, float y) => x < y ? x : y;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the minimum of two double values.</summary>
         public static double Min(double x, double y) => x < y ? x : y;
 
@@ -451,6 +578,7 @@ namespace Quirks
 
             return min;
         }
+
         /// <summary>Returns the minimum of two or more uint values.</summary>
         public static uint Min(params uint[] values)
         {
@@ -466,6 +594,7 @@ namespace Quirks
 
             return min;
         }
+
         /// <summary>Returns the minimum of two or more long values.</summary>
         public static long Min(params long[] values)
         {
@@ -481,6 +610,7 @@ namespace Quirks
 
             return min;
         }
+
         /// <summary>Returns the minimum of two or more ulong values.</summary>
         public static ulong Min(params ulong[] values)
         {
@@ -496,6 +626,7 @@ namespace Quirks
 
             return min;
         }
+
         /// <summary>Returns the minimum of two or more float values.</summary>
         public static float Min(params float[] values)
         {
@@ -511,6 +642,7 @@ namespace Quirks
 
             return min;
         }
+
         /// <summary>Returns the minimum of two or more double values.</summary>
         public static double Min(params double[] values)
         {
@@ -531,16 +663,27 @@ namespace Quirks
 
         #region Max
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the maximum of two int values.</summary>
         public static int Max(int x, int y) => x > y ? x : y;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the maximum of two uint values.</summary>
         public static uint Max(uint x, uint y) => x > y ? x : y;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the maximum of two long values.</summary>
         public static long Max(long x, long y) => x > y ? x : y;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the maximum of two ulongvalues.</summary>
         public static ulong Max(ulong x, ulong y) => x > y ? x : y;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the maximum of two float values.</summary>
         public static float Max(float x, float y) => x > y ? x : y;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the maximum of two double values.</summary>
         public static double Max(double x, double y) => x > y ? x : y;
 
@@ -641,14 +784,19 @@ namespace Quirks
 
         /// <summary>Returns the range of two or more int values.</summary>
         public static int Range(params int[] values) => Max(values) - Min(values);
+
         /// <summary>Returns the range of two or more uint values.</summary>
         public static uint Range(params uint[] values) => Max(values) - Min(values);
+
         /// <summary>Returns the range of two or more long values.</summary>
         public static long Range(params long[] values) => Max(values) - Min(values);
+
         /// <summary>Returns the range of two or more ulong values.</summary>
         public static ulong Range(params ulong[] values) => Max(values) - Min(values);
+
         /// <summary>Returns the range of two or more float values.</summary>
         public static float Range(params float[] values) => Max(values) - Min(values);
+
         /// <summary>Returns the range of two or more double values.</summary>
         public static double Range(params double[] values) => Max(values) - Min(values);
 
@@ -811,68 +959,205 @@ namespace Quirks
         #region Mode
 
         /// <summary>Calculates the mode of an array of int.</summary>
-        public static int GetMode(params int[] values)
+        public static int Mode(params int[] values)
         {
             if (values == null || values.Length == 0)
                 throw new InvalidOperationException("Empty Collection");
 
-            Dictionary<int, int> counts = values.GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());
-            int mode = counts.OrderByDescending(kv => kv.Value).First().Key;
+            Array.Sort(values);
+
+            int mode = values[0];
+            int maxCount = 1;
+            int currentCount = 1;
+            int currentValue = values[0];
+
+            for(int i = 1; i < values.Length; i++)
+            {
+                if(values[i] == currentValue)
+                {
+                    currentCount++;
+                    if(currentCount > maxCount)
+                    {
+                        maxCount = currentCount;
+                        mode = currentValue;
+                    }
+                }
+                else
+                {
+                    currentValue = values[i];
+                    currentCount = 1;
+                }
+            }
 
             return mode;
         }
+
         /// <summary>Calculates the mode of an array of uint.</summary>
-        public static uint GetMode(params uint[] values)
+        public static uint Mode(params uint[] values)
         {
             if (values == null || values.Length == 0)
                 throw new InvalidOperationException("Empty Collection");
 
-            Dictionary<uint, int> counts = values.GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());
-            uint mode = counts.OrderByDescending(kv => kv.Value).First().Key;
+            Array.Sort(values);
+
+            uint mode = values[0];
+            int maxCount = 1;
+            int currentCount = 1;
+            uint currentValue = values[0];
+
+            for (int i = 1; i < values.Length; i++)
+            {
+                if (values[i] == currentValue)
+                {
+                    currentCount++;
+                    if (currentCount > maxCount)
+                    {
+                        maxCount = currentCount;
+                        mode = currentValue;
+                    }
+                }
+                else
+                {
+                    currentValue = values[i];
+                    currentCount = 1;
+                }
+            }
 
             return mode;
         }
+
         /// <summary>Calculates the mode of an array of long.</summary>
-        public static long GetMode(params long[] values)
+        public static long Mode(params long[] values)
         {
             if (values == null || values.Length == 0)
                 throw new InvalidOperationException("Empty Collection");
 
-            Dictionary<long, int> counts = values.GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());
-            long mode = counts.OrderByDescending(kv => kv.Value).First().Key;
+            Array.Sort(values);
+
+            long mode = values[0];
+            int maxCount = 1;
+            int currentCount = 1;
+            long currentValue = values[0];
+
+            for (int i = 1; i < values.Length; i++)
+            {
+                if (values[i] == currentValue)
+                {
+                    currentCount++;
+                    if (currentCount > maxCount)
+                    {
+                        maxCount = currentCount;
+                        mode = currentValue;
+                    }
+                }
+                else
+                {
+                    currentValue = values[i];
+                    currentCount = 1;
+                }
+            }
 
             return mode;
         }
+
         /// <summary>Calculates the mode of an array of ulong.</summary>
-        public static ulong GetMode(params ulong[] values)
+        public static ulong Mode(params ulong[] values)
         {
             if (values == null || values.Length == 0)
                 throw new InvalidOperationException("Empty Collection");
 
-            Dictionary<ulong, int> counts = values.GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());
-            ulong mode = counts.OrderByDescending(kv => kv.Value).First().Key;
+            Array.Sort(values);
+
+            ulong mode = values[0];
+            int maxCount = 1;
+            int currentCount = 1;
+            ulong currentValue = values[0];
+
+            for (int i = 1; i < values.Length; i++)
+            {
+                if (values[i] == currentValue)
+                {
+                    currentCount++;
+                    if (currentCount > maxCount)
+                    {
+                        maxCount = currentCount;
+                        mode = currentValue;
+                    }
+                }
+                else
+                {
+                    currentValue = values[i];
+                    currentCount = 1;
+                }
+            }
 
             return mode;
         }
+
         /// <summary>Calculates the mode of an array of float.</summary>
-        public static float GetMode(params float[] values)
+        public static float Mode(params float[] values)
         {
             if (values == null || values.Length == 0)
                 throw new InvalidOperationException("Empty Collection");
 
-            Dictionary<float, int> counts = values.GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());
-            float mode = counts.OrderByDescending(kv => kv.Value).First().Key;
+            Array.Sort(values);
+
+            float mode = values[0];
+            int maxCount = 1;
+            int currentCount = 1;
+            float currentValue = values[0];
+
+            for (int i = 1; i < values.Length; i++)
+            {
+                if (values[i] == currentValue)
+                {
+                    currentCount++;
+                    if (currentCount > maxCount)
+                    {
+                        maxCount = currentCount;
+                        mode = currentValue;
+                    }
+                }
+                else
+                {
+                    currentValue = values[i];
+                    currentCount = 1;
+                }
+            }
 
             return mode;
         }
+
         /// <summary>Calculates the mode of an array of double.</summary>
-        public static double GetMode(params double[] values)
+        public static double Mode(params double[] values)
         {
             if (values == null || values.Length == 0)
                 throw new InvalidOperationException("Empty Collection");
 
-            Dictionary<double, int> counts = values.GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());
-            double mode = counts.OrderByDescending(kv => kv.Value).First().Key;
+            Array.Sort(values);
+
+            double mode = values[0];
+            int maxCount = 1;
+            int currentCount = 1;
+            double currentValue = values[0];
+
+            for (int i = 1; i < values.Length; i++)
+            {
+                if (values[i] == currentValue)
+                {
+                    currentCount++;
+                    if (currentCount > maxCount)
+                    {
+                        maxCount = currentCount;
+                        mode = currentValue;
+                    }
+                }
+                else
+                {
+                    currentValue = values[i];
+                    currentCount = 1;
+                }
+            }
 
             return mode;
         }
@@ -993,54 +1278,75 @@ namespace Quirks
 
         #region Percent
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the percentage of a value in a total.</summary>
         public static int Percent(int value, int total) => (value * 100) / total;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the percentage of a value in a total.</summary>
         public static uint Percent(uint value, uint total) => (value * 100) / total;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the percentage of a value in a total.</summary>
         public static long Percent(long value, long total) => (value * 100) / total;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the percentage of a value in a total.</summary>
         public static ulong Percent(ulong value, ulong total) => (value * 100) / total;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the percentage of a value in a total.</summary>
         public static float Percent(float value, float total) => (value * 100) / total;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         /// <summary>Returns the percentage of a value in a total.</summary>
         public static double Percent(double value, double total) => (value * 100) / total;
-
 
         #endregion
 
         #region Clamp
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int Clamp(int value, int min, int max)
         {
             if (value < min) return min;
             if (value > max) return max;
             return value;
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint Clamp(uint value, uint min, uint max)
         {
             if (value < min) return min;
             if (value > max) return max;
             return value;
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static long Clamp(long value, long min, long max)
         {
             if (value < min) return min;
             if (value > max) return max;
             return value;
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ulong Clamp(ulong value, ulong min, ulong max)
         {
             if (value < min) return min;
             if (value > max) return max;
             return value;
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Clamp(float value, float min, float max)
         {
             if (value < min) return min;
             if (value > max) return max;
             return value;
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Clamp(double value, double min, double max)
         {
             if (value < min) return min;
@@ -1048,6 +1354,7 @@ namespace Quirks
             return value;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Clamp<T>(T value, T min, T max) where T : System.IComparable<T>
         {
             return value.CompareTo(max) > 0 ?
@@ -1059,6 +1366,7 @@ namespace Quirks
 
         #region Clamp01
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Clamp01(float value)
         {
             if (value < 0) return 0;
@@ -1066,6 +1374,8 @@ namespace Quirks
 
             return value;
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Clamp01(double value)
         {
             if (value < 0) return 0;
@@ -1078,82 +1388,124 @@ namespace Quirks
 
         #region Log
 
-        public static float Log(float x) => AsFloat(Math.Log(x));
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Log(float x) => MathF.Log(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Log(double x) => Math.Log(x);
 
-        public static float Log(float x, float newBase) => AsFloat(Math.Log(x, newBase));
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Log(float x, float newBase) => MathF.Log(x, newBase);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Log(double x, double newBase) => Math.Log(x, newBase);
 
         #endregion
 
         #region Log2
 
-        public static float Log2(float x) => AsFloat(Math.Log(x) / Log2E);
-        public static double Log2(double x) => (Math.Log(x) / doubleLog2E);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Log2(float x) => MathF.Log(x) / Log2E;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double Log2(double x) => Math.Log(x) / doubleLog2E;
 
         #endregion
 
         #region Log10
 
-        public static float Log10(float x) => AsFloat(Math.Log10(x));
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Log10(float x) => MathF.Log10(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Log10(double x) => Math.Log10(x);
 
         #endregion
 
         #region Floor
 
-        public static float Floor(float value) => AsFloat(Math.Floor(value));
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Floor(float value) => MathF.Floor(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Floor(double value) => Math.Floor(value);
 
-        public static int FloorToInt(float value) => AsInt(Math.Floor(value));
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int FloorToInt(float value) => AsInt(MathF.Floor(value));
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int FloorToInt(double value) => AsInt(Math.Floor(value));
 
         #endregion
 
         #region Ceil
 
-        public static float Ceil(float value) => AsFloat(Math.Ceiling(value));
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Ceil(float value) => MathF.Ceiling(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Ceil(double value) => Math.Ceiling(value);
 
-        public static int CeilToInt(float value) => AsInt(Math.Ceiling(value));
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int CeilToInt(float value) => AsInt(MathF.Ceiling(value));
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int CeilToInt(double value) => AsInt(Math.Ceiling(value));
 
         #endregion
 
         #region Round
 
-        public static float Round(float value, int digits = 0) => AsFloat(Math.Round(value, digits));
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Round(float value, int digits = 0) => MathF.Round(value, digits);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Round(double value, int digits = 0) => Math.Round(value, digits);
 
-        public static int RoundToInt(float value) => AsInt(Math.Round(value));
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int RoundToInt(float value) => AsInt(MathF.Round(value));
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int RoundToInt(double value) => AsInt(Math.Round(value));
 
         #endregion
 
         #region Angle
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Angle(float x1, float y1, float x2, float y2) => Trigq.Atan2(y2 - y1, x2 - x1) + Rad2Deg;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Angle(double x1, double y1, double x2, double y2) => Trigq.Atan2(y2 - y1, x2 - x1) + doubleRad2Deg;
 
         #endregion
 
         #region AngleAverage
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float AngleAverage(float a, float b) => Interpq.Lerp(a, b, 0.5f);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double AngleAverage(double a, double b) => Interpq.Lerp(a, b, 0.5);
 
         #endregion
 
         #region Truncate
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static decimal Truncate(decimal x) => Math.Truncate(x);
-        public static float Truncate(float x) => AsFloat(Math.Truncate(x));
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Truncate(float x) => MathF.Truncate(x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Truncate(double x) => Math.Truncate(x);
 
         #endregion
 
         #region DivRem
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         //<summary>DivRem function for integers.</summary>
         public static void DivRem(int dividend, int divisor, out int quotient, out int remainder)
         {
@@ -1161,6 +1513,7 @@ namespace Quirks
             remainder = dividend % divisor;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         //<summary>DivRem function for floats.</summary>
         public static void DivRem(float dividend, float divisor, out float quotient, out float remainder)
         {
@@ -1168,6 +1521,7 @@ namespace Quirks
             remainder = dividend % divisor;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         //<summary>DivRem function for doubles.</summary>
         public static void DivRem(double dividend, double divisor, out double quotient, out double remainder)
         {

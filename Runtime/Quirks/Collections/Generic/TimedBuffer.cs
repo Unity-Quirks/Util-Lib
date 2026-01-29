@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Quirks.Collections.Generic
 {
@@ -58,7 +58,5 @@ namespace Quirks.Collections.Generic
         }
 
         public int GetBufferSizeAverage() => (int)((float)GetBufferSize() / timeBuffer.Count);
-
     }
-
 }

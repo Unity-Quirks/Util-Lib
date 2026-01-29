@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace Quirks
 {
@@ -8,11 +9,18 @@ namespace Quirks
 
         #region Quad
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InQuad(float t) => t * t;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float OutQuad(float t) => 1 - InQuad(1 - t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InOutQuad(float t)
         {
-            if (t < 0.5f) return InQuad(t * 2) * 0.5f;
+            if (t < 0.5f) 
+                return InQuad(t * 2) * 0.5f;
+
             return 1 - InQuad((1 - t) * 2) * 0.5f;
         }
 
@@ -20,11 +28,18 @@ namespace Quirks
 
         #region Cubic
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InCubic(float t) => t * t * t;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)] 
         public static float OutCubic(float t) => 1 - InCubic(1 - t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InOutCubic(float t)
         {
-            if (t < 0.5f) return InCubic(t * 2) * 0.5f;
+            if (t < 0.5f) 
+                return InCubic(t * 2) * 0.5f;
+
             return 1 - InCubic((1 - t) * 2) * 0.5f;
         }
 
@@ -32,11 +47,18 @@ namespace Quirks
 
         #region Quart
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InQuart(float t) => t * t * t * t;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float OutQuart(float t) => 1 - InQuart(1 - t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InOutQuart(float t)
         {
-            if (t < 0.5f) return InQuart(t * 2) * 0.5f;
+            if (t < 0.5f) 
+                return InQuart(t * 2) * 0.5f;
+
             return 1 - InQuart((1 - t) * 2) * 0.5f;
         }
 
@@ -44,11 +66,18 @@ namespace Quirks
 
         #region Quint
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InQuint(float t) => t * t * t * t * t;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float OutQuint(float t) => 1 - InQuint(1 - t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InOutQuint(float t)
         {
-            if (t < 0.5f) return InQuint(t * 2) * 0.5f;
+            if (t < 0.5f) 
+                return InQuint(t * 2) * 0.5f;
+
             return 1 - InQuint((1 - t) * 2) * 0.5f;
         }
 
@@ -56,19 +85,31 @@ namespace Quirks
 
         #region Sine
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InSine(float t) => 1 - (float)Trigq.Cos(t * Mathq.Pi * 0.5f);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float OutSine(float t) => (float)Trigq.Sin(t * Mathq.Pi * 0.5f);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InOutSine(float t) => (float)(Trigq.Cos(t * Mathq.Pi) - 1) * -0.5f;
 
         #endregion
 
         #region Expo
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InExpo(float t) => (float)Mathq.Pow(2, 10 * (t - 1));
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float OutExpo(float t) => 1 - InExpo(1 - t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InOutExpo(float t)
         {
-            if (t < 0.5f) return InExpo(t * 2) * 0.5f;
+            if (t < 0.5f) 
+                return InExpo(t * 2) * 0.5f;
+
             return 1 - InExpo((1 - t) * 2) * 0.5f;
         }
 
@@ -76,11 +117,18 @@ namespace Quirks
 
         #region Circ
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InCirc(float t) => -((float)Mathq.Sqrt(1 - t * t) - 1);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float OutCirc(float t) => 1 - InCirc(1 - t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InOutCirc(float t)
         {
-            if (t < 0.5f) return InCirc(t * 2) * 0.5f;
+            if (t < 0.5f) 
+                return InCirc(t * 2) * 0.5f;
+
             return 1 - InCirc((1 - t) * 2) * 0.5f;
         }
 
@@ -88,15 +136,22 @@ namespace Quirks
 
         #region Elastic
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InElastic(float t) => 1 - OutElastic(1 - t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float OutElastic(float t)
         {
             float p = 0.3f;
             return (float)Mathq.Pow(2, -10 * t) * (float)Trigq.Sin((t - p / 4) * (2 * Mathq.Pi) / p) + 1;
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InOutElastic(float t)
         {
-            if (t < 0.5f) return InElastic(t * 2) * 0.5f;
+            if (t < 0.5f) 
+                return InElastic(t * 2) * 0.5f;
+
             return 1 - InElastic((1 - t) * 2) * 0.5f;
         }
 
@@ -104,15 +159,22 @@ namespace Quirks
 
         #region Back
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InBack(float t)
         {
             float s = 1.70158f;
             return t * t * ((s + 1) * t - s);
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float OutBack(float t) => 1 - InBack(1 - t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InOutBack(float t)
         {
-            if (t < 0.5f) return InBack(t * 2) * 0.5f;
+            if (t < 0.5f) 
+                return InBack(t * 2) * 0.5f;
+
             return 1 - InBack((1 - t) * 2) * 0.5f;
         }
 
@@ -122,28 +184,73 @@ namespace Quirks
 
         #region Lerp
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int Lerp(int a, int b, float t) => Mathq.AsInt(a + (b - a) * Mathq.Clamp01(t));
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint Lerp(uint a, uint b, float t) => Mathq.AsUInt(a + (b - a) * Mathq.Clamp01(t));
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static long Lerp(long a, long b, float t) => Mathq.AsLong(a + (b - a) * Mathq.Clamp01(t));
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ulong Lerp(ulong a, ulong b, float t) => Mathq.AsULong(a + (b - a) * Mathq.Clamp01(t));
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Lerp(float a, float b, float t) => a + (b - a) * Mathq.Clamp01(t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Lerp(double a, double b, double t) => a + (b - a) * Mathq.Clamp01(t);
 
         #endregion
 
         #region LerpUnclamped
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int LerpUnclamped(int a, int b, float t) => Mathq.AsInt(a + (b - a) * t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint LerpUnclamped(uint a, uint b, float t) => Mathq.AsUInt(a + (b - a) * t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static long LerpUnclamped(long a, long b, float t) => Mathq.AsLong(a + (b - a) * t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ulong LerpUnclamped(ulong a, ulong b, float t) => Mathq.AsULong(a + (b - a) * t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float LerpUnclamped(float a, float b, float t) => a + (b - a) * t;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double LerpUnclamped(double a, double b, double t) => a + (b - a) * t;
+
+        #endregion
+
+        #region LerpAngle
+
+        public static float LerpAngle(float a, float b, float t)
+        {
+            float delta = Repeat(b - a, 360f);
+            if (delta > 180f)
+                delta -= 360f;
+
+            return a + delta * Mathq.Clamp01(t);
+        }
+
+        public static float LerpAngleRadians(float a, float b, float t)
+        {
+            float delta = Repeat(b - a, Mathq.Tau);
+            if (delta > Mathq.Pi)
+                delta -= Mathq.Tau;
+
+            return a + delta * Mathq.Clamp01(t);
+        }
 
         #endregion
 
         #region InverseLerp
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float InverseLerp(float a, float b, float x)
         {
             if (a != b)
@@ -153,6 +260,8 @@ namespace Quirks
 
             return 0f;
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double InverseLerp(double a, double b, double x)
         {
             if (a != b)
@@ -308,34 +417,48 @@ namespace Quirks
         #region Repeat
 
         /// <summary>Loops the value t, so that it is never smaller than 0 and never larger than length.</summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Repeat(float t, float length) => Mathq.Clamp(t - Mathq.Floor(t / length) * length, 0f, length);
+
         /// <summary>Loops the value t, so that it is never smaller than 0 and never larger than length.</summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Repeat(double t, double length) => Mathq.Clamp(t - Mathq.Floor(t / length) * length, 0f, length);
 
         #endregion
 
         #region Remap
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int Remap(int value, int from1, int to1, int from2, int to2)
         {
-            return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+            return Mathq.AsInt((value - from1) / (float)(to1 - from1) * (to2 - from2) + from2);
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint Remap(uint value, uint from1, uint to1, uint from2, uint to2)
         {
-            return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+            return Mathq.AsUInt((value - from1) / (float)(to1 - from1) * (to2 - from2) + from2);
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static long Remap(long value, long from1, long to1, long from2, long to2)
         {
-            return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+            return Mathq.AsLong((value - from1) / (float)(to1 - from1) * (to2 - from2) + from2);
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ulong Remap(ulong value, ulong from1, ulong to1, ulong from2, ulong to2)
         {
-            return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+            return Mathq.AsULong((value - from1) / (float)(to1 - from1) * (to2 - from2) + from2);
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Remap(float value, float from1, float to1, float from2, float to2)
         {
             return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Remap(double value, double from1, double to1, double from2, double to2)
         {
             return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
@@ -345,6 +468,7 @@ namespace Quirks
 
         #region SmoothStep
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int SmoothStep(int from, int to, float t)
         {
             int x = Mathq.AsInt(Mathq.Clamp01((t - from) / (to - from)));
@@ -355,25 +479,88 @@ namespace Quirks
             uint x = Mathq.AsUInt(Mathq.Clamp01((t - from) / (to - from)));
             return x * x * (3 - 2 * x);
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static long SmoothStep(long from, long to, float t)
         {
             long x = Mathq.AsLong(Mathq.Clamp01((t - from) / (to - from)));
             return x * x * (3 - 2 * x);
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ulong SmoothStep(ulong from, ulong to, float t)
         {
             ulong x = Mathq.AsULong(Mathq.Clamp01((t - from) / (to - from)));
             return x * x * (3 - 2 * x);
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float SmoothStep(float from, float to, float t)
         {
             float x = Mathq.Clamp01((t - from) / (to - from));
             return x * x * (3 - 2 * x);
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double SmoothStep(double from, double to, double t)
         {
             double x = Mathq.Clamp01((t - from) / (to - from));
             return x * x * (3 - 2 * x);
+        }
+
+        #endregion
+
+        #region MoveTowards
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float MoveTowards(float current, float target, float maxDelta) => Mathq.Abs(target - current) <= maxDelta ? target : current + Mathq.Sign(target - current) * maxDelta;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double MoveTowards(double current, double target, double maxDelta) => Mathq.Abs(target - current) <= maxDelta ? target : current + Mathq.Sign(target - current) * maxDelta;
+
+
+        #endregion
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float PingPong(float t, float length)
+        {
+            t = Repeat(t, length * 2f);
+            return length - Mathq.Abs(t - length);
+        }
+
+        #region Color
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static (float r, float g, float b) LerpRGB((float r, float g, float b) a, (float r, float g, float b) b, float t)
+        {
+            t = Mathq.Clamp01(t);
+
+            return 
+            (
+                a.r + (b.r - a.r) * t,
+                a.g + (b.g - a.g) * t,
+                a.b + (b.b - a.b) * t
+            );
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static (float h, float s, float v) LerpHSV((float h, float s, float v) a, (float h, float s, float v) b, float t)
+        {
+            t = Mathq.Clamp01(t);
+
+            float dh = b.h - a.h;
+            if (dh > 0.5f)
+                dh -= 1f;
+
+            if (dh < -0.5f)
+                dh += 1f;
+
+            return
+            (
+                a.h + dh * t,
+                a.s + (b.s - a.s) * t,
+                a.v + (b.v - a.v) * t
+            );
         }
 
         #endregion

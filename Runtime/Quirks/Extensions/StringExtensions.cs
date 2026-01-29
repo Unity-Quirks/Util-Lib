@@ -80,12 +80,14 @@ namespace Quirks
         /// <summary>Reverse the string [World -> dlroW]</summary>
         public static string Reverse(this string input)
         {
-            StringBuilder ret = new StringBuilder();
-            for (int i = input.Length - 1; i >= 0; i--)
-            {
-                ret.Append(input.Substring(i, 1));
-            }
-            return ret.ToString();
+            if (string.IsNullOrEmpty(input))
+                return input;
+
+            Span<char> chars = stackalloc char[input.Length];
+            input.AsSpan().CopyTo(chars);
+            chars.Reverse();
+
+            return new string(chars);
         }
 
         /// <summary>Capitalize the string [hey there -> Hey there]</summary>
@@ -337,7 +339,7 @@ namespace Quirks
         #endregion
 
         static Regex lastNountRegEx = new Regex(@"([A-Z][a-z]*)");
-        public static string ParseLastNoun(string text)
+        public static string ParseLastNoun(this string text)
         {
             MatchCollection matches = lastNountRegEx.Matches(text);
             return matches.Count > 0 ? matches[matches.Count - 1].Value : "";

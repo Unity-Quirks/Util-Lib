@@ -1,10 +1,8 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 
 namespace Quirks.Cryptography
 {
-    [Obsolete("MD5 is cryptographically broken and should not be used for security purposes! Use SHA256 instead.")]
-    public static class MD5
+    public static class SHA512
     {
         /// <summary>Hashes the input string</summary>
         public static string Hash(string input) => Hash(Encoding.UTF8.GetBytes(input));
@@ -12,18 +10,18 @@ namespace Quirks.Cryptography
         /// <summary>Hashes the input bytes</summary>
         public static string Hash(byte[] input)
         {
-            using (var md5 = System.Security.Cryptography.MD5.Create())
+            using (var sha512 = System.Security.Cryptography.SHA512.Create())
             {
-                return CryptoUtils.BytesToHex(md5.ComputeHash(input));
+                return CryptoUtils.BytesToHex(sha512.ComputeHash(input));
             }
         }
 
         /// <summary>Hashes the input bytes</summary>
         public static byte[] HashBytes(byte[] input)
         {
-            using (var md5 = System.Security.Cryptography.MD5.Create())
+            using (var sha512 = System.Security.Cryptography.SHA512.Create())
             {
-                return md5.ComputeHash(input);
+                return sha512.ComputeHash(input);
             }
         }
 

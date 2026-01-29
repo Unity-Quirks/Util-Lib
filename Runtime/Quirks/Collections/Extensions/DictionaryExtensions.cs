@@ -20,7 +20,7 @@ namespace Quirks.Collections
         /// <summary>Returns a randomly selected Value from the given Dictionary.</summary>
         public static IEnumerable<TValue> GetRandomValue<TKey, TValue>(this IDictionary<TKey, TValue> dict)
         {
-            yield return dict.ElementAt(Randomq.GetRandom(0, dict.Count - 1)).Value;
+            yield return dict.ElementAt(Randomq.Range(0, dict.Count - 1)).Value;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Quirks.Collections
         /// </summary>
         public static KeyValuePair<TKey, TValue> PickRandomAndSwap<TKey, TValue>(this IDictionary<TKey, TValue> dict, ref int size)
         {
-            int index = Randomq.GetRandom(0, size - 1);
+            int index = Randomq.Range(0, size - 1);
 
             KeyValuePair<TKey, TValue> temp = GetPair(dict, dict.ElementAt(index).Key);
 
