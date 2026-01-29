@@ -68,9 +68,9 @@ namespace Quirks
 
         public static void DrawMesh(Mesh mesh, [DefaultValue("Vector3.zero")] Vector3 position, [DefaultValue("Quaternion.identity")] Quaternion rotation, [DefaultValue("Vector3.one")] Vector3 scale)
             => Gizmos.DrawMesh(mesh, -1, position, rotation, scale);
-        public static void DrawMesh(Mesh mesh, Vector3 position, Quaternion rotation) => DrawMesh(mesh, position, rotation);
-        public static void DrawMesh(Mesh mesh, Vector3 position) => DrawMesh(mesh, position);
-        public static void DrawMesh(Mesh mesh) => DrawMesh(mesh);
+        public static void DrawMesh(Mesh mesh, Vector3 position, Quaternion rotation) => Gizmos.DrawMesh(mesh, position, rotation);
+        public static void DrawMesh(Mesh mesh, Vector3 position) => Gizmos.DrawMesh(mesh, position);
+        public static void DrawMesh(Mesh mesh) => Gizmos.DrawMesh(mesh);
         public static void DrawMesh(Mesh mesh, int submeshIndex, Vector3 position, Quaternion rotation) => Gizmos.DrawMesh(mesh, submeshIndex, position, rotation);
         public static void DrawMesh(Mesh mesh, int submeshIndex, Vector3 position) => Gizmos.DrawMesh(mesh, submeshIndex, position);
         public static void DrawMesh(Mesh mesh, int submeshIndex) => Gizmos.DrawMesh(mesh, submeshIndex);
@@ -180,7 +180,6 @@ namespace Quirks
 
         public static void DrawWireArc(Vector3 center, float radius, float angle, int segments, Quaternion rotation, Vector3 centerOfRotation)
         {
-
             Matrix4x4 old = Gizmos.matrix;
 
             if (rotation.Equals(default(Quaternion)))
@@ -247,7 +246,7 @@ namespace Quirks
 
         public static void DrawWireCapsule(Vector3 center, float radius, float height, Quaternion rotation = default(Quaternion))
         {
-            var old = Gizmos.matrix;
+            Matrix4x4 old = Gizmos.matrix;
 
             if (rotation.Equals(default(Quaternion)))
                 rotation = Quaternion.identity;
