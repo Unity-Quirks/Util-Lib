@@ -8,6 +8,11 @@ namespace Quirks
         public static Vector2 Vector2 => new Vector2(Float, Float);
         public static Vector3 Vector3 => new Vector3(Float, Float, Float);
 
+        public static Quaternion Rotation => Quaternion.Euler(Vector3);
+
+        public static Color Color => new Color(Float, Float, Float);
+        public static Color ColorWithAlpha => new Color(Float, Float, Float, Float);
+
         #region Range
 
         #region  Vector2
@@ -90,7 +95,6 @@ namespace Quirks
         #endregion
 
         #endregion
-
 
     }
 }
