@@ -80,6 +80,22 @@ namespace Quirks
             return descendants;
         }
 
+        /// <summary>Balances the number of child GameObjects under a specified parent.</summary>
+        /// <param name="parent">Parent which holds the prefabs.</param>
+        /// <param name="prefab">The prefab to instaniate.</param>
+        /// <param name="amount">Desired amount of GameObjects.</param>
+        public static void BalancePrefabs(this Transform parent, GameObject prefab, int amount)
+        {
+            for (int i = parent.childCount; i < amount; ++i)
+            {
+                GameObject go = GameObject.Instantiate(prefab);
+                go.transform.SetParent(parent, false);
+            }
+
+            for (int i = parent.childCount - 1; i >= amount; --i)
+                GameObject.Destroy(parent.GetChild(i).gameObject);
+        }
+
         public static void DetachChildren(this Transform transform)
         {
             while(transform.childCount > 0)
